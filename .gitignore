@@ -139,6 +139,7 @@ celerybeat-schedule
 .env
 .venv
 gomag_venv/
+gomag_venv
 env/
 venv/
 ENV/
