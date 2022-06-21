@@ -25,6 +25,6 @@ cd ~/Documents/Programmation/DIM-AD/gomag
 
 git add .
 
-git commit -m "remove Formkit, Vue3Multoselect, jsFileDownload, AutoAnimate ..."
+git commit -m "pyERP fresh clone and install"
 
 git push -u origin master
