@@ -1,0 +1,30 @@
+cd ~/Documents/Programmation/DIM-AD/gomag/database
+
+source ../.env/bin/activate
+
+python3 manage.py runserver
+
+**********************************************
+
+python3 manage.py createsuperuser
+
+python3 manage.py makemigrations
+
+python3 manage.py migrate
+
+**********************************************
+
+cd ~/Documents/Programmation/DIM-AD/gomag
+
+yarn dev
+
+**********************************************
+github
+
+cd ~/Documents/Programmation/DIM-AD/gomag
+
+git add .
+
+git commit -m "remove Formkit, Vue3Multoselect, jsFileDownload, AutoAnimate ..."
+
+git push -u origin master

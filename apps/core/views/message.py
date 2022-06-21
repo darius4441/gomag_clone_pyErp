@@ -1,0 +1,50 @@
+# Django Library
+from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
+
+# Localfolder Library
+from ..models import PyMessage
+from .web_father import (
+    FatherCreateView,
+    FatherDeleteView,
+    FatherDetailView,
+    FatherListView,
+    FatherUpdateView,
+)
+
+OBJECT_LIST_FIELDS = [
+    {"string": _("Message"), "field": "message"},
+]
+
+OBJECT_FORM_FIELDS = ["message", "user_id"]
+
+
+class MessageListView(LoginRequiredMixin, FatherListView):
+    model = PyMessage
+    template_name = "core/list.html"
+    extra_context = {"fields": OBJECT_LIST_FIELDS}
+
+
+class MessageDetailView(LoginRequiredMixin, FatherDetailView):
+    model = PyMessage
+    template_name = "core/detail.html"
+    extra_context = {"fields": OBJECT_LIST_FIELDS}
+
+
+class MessageCreateView(LoginRequiredMixin, FatherCreateView):
+    model = PyMessage
+    fields = OBJECT_FORM_FIELDS
+    template_name = "core/form.html"
+
+
+class MessageUpdateView(LoginRequiredMixin, FatherUpdateView):
+    model = PyMessage
+    fields = OBJECT_FORM_FIELDS
+    template_name = "core/form.html"
+
+
+class MessageDeleteView(LoginRequiredMixin, FatherDeleteView):
+    model = PyMessage
+    success_url = "core:messages"
